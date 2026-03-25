@@ -100,6 +100,7 @@ cd nexstore
 
 Este proyecto es una simulación de e-commerce, no realiza pagos reales.
 
+
 📌 Futuras mejoras
 Backend real
 Sistema de autenticación
@@ -107,6 +108,7 @@ Base de datos
 Pagos reales
 Historial de compras
 Panel de administración
+
 👨‍💻 Autor
 
 Juan Diego Monsalve Martinez
