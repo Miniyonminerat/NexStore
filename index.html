@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexStore — Inicio</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-icon">⚡</div>
+    <h1>Nex<span>Store</span></h1>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Tienda.html">Tienda</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+        <li><button id="openModal" class="btn btn-secondary" style="margin-left:8px; padding:8px 14px; font-size:0.8rem;">Ver más</button></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-tag">Bienvenido a NexStore</div>
+    <h2>Tu tienda<br><span>digital</span></h2>
+    <p>Explora nuestro catálogo de productos y encuentra lo que necesitas al mejor precio.</p>
+    <div class="hero-btns">
+        <a href="Tienda.html" class="btn btn-primary">⚡ Ver Tienda</a>
+        <a href="carrito.html" class="btn btn-secondary">🛒 Mi Carrito</a>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="stat-value">20+</div>
+        <div class="stat-label">Productos</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Categorías</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">En línea</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Disponible</div>
+    </div>
+</div>
+
+<div class="home-sections">
+    <div class="home-card">
+        <div class="home-card-icon">🛍️</div>
+        <h3>Catálogo</h3>
+        <p>Productos actualizados en tiempo real desde nuestra API. Siempre variedad disponible.</p>
+    </div>
+    <div class="home-card">
+        <div class="home-card-icon">🔒</div>
+        <h3>Seguro</h3>
+        <p>Proceso de compra simple y confiable. Tu carrito se guarda mientras navegas.</p>
+    </div>
+    <div class="home-card">
+        <div class="home-card-icon">⚡</div>
+        <h3>Rápido</h3>
+        <p>Carga instantánea de productos. Agrega al carrito con un solo clic.</p>
+    </div>
+</div>
+
+<footer>
+    <p>NexStore 2026 — Todos los derechos reservados</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sobre NexStore</h2>
+        <p>NexStore es una tienda de demostración construida con HTML, CSS y JavaScript puro. Integra la FakeStore API para mostrar productos reales.</p>
+        <a href="Tienda.html" class="btn btn-primary">Ir a la tienda</a>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

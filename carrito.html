@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexStore — Carrito</title>
+    <link rel="stylesheet" href="css/carrito.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEdhncz49gy7RzLhHphAehRzmpBS9zhII&libraries=places&language=es"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo-icon">⚡</div>
+    <h1>Nex<span>Store</span></h1>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Tienda.html">Tienda</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+    </ul>
+</nav>
+
+<div class="carrito-wrapper">
+
+    <div class="carrito-header">
+        <h2>Mi <span>Carrito</span></h2>
+        <span class="carrito-count-label" id="carrito-count-label">0 artículos</span>
+    </div>
+
+    <!-- ESTADO VACÍO -->
+    <div id="vacio-section" style="display:none;">
+        <div class="carrito-vacio">
+            <div class="vacio-icon">🛒</div>
+            <h3>Tu carrito está vacío</h3>
+            <p>Agrega productos desde la tienda para verlos aquí.</p>
+            <a href="Tienda.html" class="btn btn-primary">⚡ Ir a la tienda</a>
+        </div>
+    </div>
+
+    <!-- CARRITO CON ITEMS -->
+    <div id="carrito-section">
+        <ul id="lista"></ul>
+
+        <div class="carrito-resumen">
+            <div class="resumen-row">
+                <span>Subtotal</span>
+                <span>$<span id="subtotal">0.00</span></span>
+            </div>
+            <div class="resumen-row">
+                <span>Envío</span>
+                <span class="envio-gratis">Gratis</span>
+            </div>
+            <div class="resumen-row total">
+                <span>Total</span>
+                <span class="valor">$<span id="total">0.00</span></span>
+            </div>
+        </div>
+
+        <div class="carrito-acciones">
+            <button class="btn btn-danger" onclick="vaciarCarrito()">🗑 Vaciar carrito</button>
+            <button class="btn btn-primary" onclick="abrirModalMapa()">📍 Seleccionar entrega</button>
+        </div>
+
+        <br>
+        <a href="Tienda.html" class="btn btn-secondary">← Seguir comprando</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>NexStore 2026 — Todos los derechos reservados</p>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<!-- MODAL MAPA -->
+<div id="modal-mapa" class="modal-checkout">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalMapa()">&times;</span>
+        <h2>📍 ¿Dónde te lo entregamos?</h2>
+        <p class="modal-subtitle">Busca tu dirección o haz clic en el mapa</p>
+
+        <div class="mapa-busqueda-row">
+            <input id="mapa-busqueda" type="text" class="checkout-input" placeholder="Ej. Calle 100 #15-20, Bogotá">
+            <button class="btn btn-primary" onclick="buscarEnMapa()">Buscar</button>
+        </div>
+
+        <div id="mapa-contenedor"></div>
+
+        <div id="direccion-chip" class="direccion-chip">
+            <span>📍</span>
+            <span id="direccion-texto">—</span>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="cerrarModalMapa()">Cancelar</button>
+            <button class="btn btn-primary btn-disabled" id="btn-confirmar-dir" onclick="confirmarDireccion()" disabled>
+                Confirmar dirección ✓
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL PAGO STRIPE -->
+<div id="modal-pago" class="modal-checkout">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalPago()">&times;</span>
+        <h2>💳 Pago seguro</h2>
+        <p class="modal-subtitle">
+            Modo prueba · Usa <strong class="accent-text">4242 4242 4242 4242</strong>
+        </p>
+
+        <div class="stripe-resumen">
+            <div class="stripe-resumen-items" id="stripe-items"></div>
+            <div class="stripe-resumen-total">
+                <span>Total</span>
+                <span>$<span id="stripe-total">0.00</span></span>
+            </div>
+        </div>
+
+        <input type="text"  id="stripe-nombre" class="checkout-input" placeholder="Nombre en la tarjeta">
+        <input type="email" id="stripe-email"  class="checkout-input" placeholder="Tu correo (para el recibo)">
+
+        <div id="stripe-card-number" class="stripe-field"></div>
+        <div class="stripe-fields-row">
+            <div id="stripe-card-expiry" class="stripe-field"></div>
+            <div id="stripe-card-cvc"    class="stripe-field"></div>
+        </div>
+
+        <div id="stripe-error" class="stripe-error"></div>
+
+        <p class="stripe-direccion">📍 <span id="stripe-dir-texto">—</span></p>
+
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="cerrarModalPago()">Cancelar</button>
+            <button class="btn btn-primary" id="btn-pagar" onclick="procesarPago()">⚡ Pagar ahora</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

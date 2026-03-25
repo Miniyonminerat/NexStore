@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexStore — Tienda</title>
+    <link rel="stylesheet" href="css/tienda.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-icon">⚡</div>
+    <h1>Nex<span>Store</span></h1>
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Tienda.html">Tienda</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+        <li><button id="openModal" class="btn btn-secondary" style="margin-left:8px; padding:8px 14px; font-size:0.8rem;">Ver más</button></li>
+    </ul>
+</nav>
+
+<div class="store-hero">
+    <div>
+        <h2>Explora el <span>catálogo</span></h2>
+        <p>Productos cargados en tiempo real desde FakeStore API</p>
+    </div>
+    <div class="store-hero-right">
+        <a href="carrito.html" class="btn btn-primary">🛒 Ver carrito (<span id="carrito-count">0</span>)</a>
+    </div>
+</div>
+
+<div class="filter-bar" id="filter-bar">
+    <!-- Filtros generados por JS -->
+</div>
+
+<div class="productos-grid" id="contenedor-productos">
+    <!-- Productos cargados por JS -->
+</div>
+
+<footer>
+    <p>NexStore 2026 — Todos los derechos reservados</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sobre la tienda</h2>
+        <p>Los productos mostrados provienen de la FakeStore API. Puedes agregarlos al carrito y simular una compra.</p>
+        <button class="btn btn-secondary close">Cerrar</button>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
