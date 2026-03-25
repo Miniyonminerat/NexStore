@@ -76,9 +76,9 @@ Página principal con presentación del proyecto, acceso a la tienda y al carrit
 ---
 
 ## 💳 Pago de prueba
-Tarjeta: 4242 4242 4242 4242
-Fecha: cualquier fecha futura
-CVC: cualquier número de 3 dígitos
+- Tarjeta: 4242 4242 4242 4242
+- Fecha: cualquier fecha futura
+- CVC: cualquier número de 3 dígitos
 
 
 ---
@@ -111,7 +111,7 @@ Panel de administración
 
 ## 👨‍💻 Autor
 
-Juan Diego Monsalve Martinez
+# Juan Diego Monsalve Martinez
 
 ## ⭐ Objetivo
 
