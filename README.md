@@ -111,7 +111,7 @@ Panel de administración
 
 ## 👨‍💻 Autor
 
-# Juan Diego Monsalve Martinez
+### Juan Diego Monsalve Martinez
 
 ## ⭐ Objetivo
 
